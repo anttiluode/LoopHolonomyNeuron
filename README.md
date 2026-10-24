@@ -2,7 +2,7 @@
 
 **Small signal travels. Large state stays. The return tells you what the path did.**
 
-[**Open the interactive paper-puncher lab**](https://anttiluode.github.io/LoopHolonomyNeuron/) · [Frozen measured receipt](results/receipt.json) · [Experiment protocol and mathematical ledger](DESIGN.md)
+[**Standalone paper-puncher lab (`index.html`)**](index.html) · [Frozen measured receipt](results/receipt.json) · [Experiment protocol and mathematical ledger](DESIGN.md)
 
 A reproducible **toy operator laboratory** inspired by a specific question: what could a layer-5-like source learn if it sends a state-bearing event through several changing receivers and later observes a transformed return alongside an independently evolving internal reference?
 
@@ -104,7 +104,7 @@ python -m unittest discover -s tests -v
 OPENBLAS_NUM_THREADS=1 python run_experiment.py --out results/receipt.json
 ```
 
-Open `index.html` in a browser; no server, package, WebGL, CDN, or network access is needed. Set packet to **Blind fixed packet**, try A→B vs B→A, then select **Informative fixed packet**. Click **Send a ping** several times to let the operator state and small forward predictor change. `Reset learning` restores both to the initial fixture. The browser lab is deterministic visualization of the structural mechanism, not the source of the held-out scores; the Python run generates the receipt.
+Open `index.html` in a browser; no server, package, WebGL, CDN, or network access is needed. GitHub Pages has not been confirmed active: download the HTML file from the repository and open it locally to use the demo. Set packet to **Blind fixed packet**, try A→B vs B→A, then select **Informative fixed packet**. Click **Send a ping** several times to let the operator state and small forward predictor change. `Reset learning` restores both to the initial fixture. The browser lab is deterministic visualization of the structural mechanism, not the source of the held-out scores; the Python run generates the receipt.
 
 ## Genealogy
 
