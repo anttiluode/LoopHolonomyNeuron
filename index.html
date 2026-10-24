@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark"><title>Loop Holonomy Neuron — Paper-puncher laboratory</title>
+<style>
+:root{--bg:#091119;--card:#101c28;--card2:#142433;--line:#2b4151;--muted:#a2b6c2;--ink:#e9f5f8;--cyan:#70dcde;--gold:#efb762;--pink:#df93b6;--green:#88d7a2;--red:#e78074}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse 90% 55% at 55% -10%,#1c4354 0%,var(--bg) 75%);font:15px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;color:var(--ink)}
+a{color:var(--cyan)}.wrap{max-width:1180px;margin:auto;padding:30px 25px 70px}.eyebrow{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.18em;color:var(--cyan)}h1{font-family:Georgia,'Times New Roman',serif;font-weight:400;font-size:clamp(35px,5.7vw,65px);letter-spacing:-.045em;line-height:1.09;margin:12px 0}h2{font-size:21px;letter-spacing:-.015em;margin:0 0 13px}h3{font-size:15px;margin:0 0 8px}p{max-width:75ch}header p{font-size:18px;color:var(--muted);margin:0 0 23px}header{padding:20px 0 28px}.chip{display:inline-block;padding:4px 11px;border:1px solid #365a5e;color:var(--cyan);border-radius:30px;font-size:11px;font-weight:700}.nav{display:flex;gap:18px;flex-wrap:wrap;margin:10px 0 20px;font-size:13px}.grid{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(260px,.8fr);gap:18px}.panel{background:linear-gradient(145deg,rgba(20,36,49,.96),rgba(12,24,34,.97));border:1px solid var(--line);border-radius:15px;padding:23px;min-width:0}.sub{font-size:12px;color:var(--muted)}.big{font-size:33px;line-height:1.15;font-variant-numeric:tabular-nums;font-weight:700}.measure{display:grid;grid-template-columns:1fr 1fr;gap:13px}.metric{background:#0a1620;border-radius:10px;padding:12px;border:1px solid #263c4a}.metric .label{color:var(--muted);font-size:11px;text-transform:uppercase;letter-spacing:.07em}.metric .big{font-size:23px;margin:2px 0 4px}.controls{display:grid;gap:12px}.control{display:flex;align-items:center;justify-content:space-between;gap:8px;font-size:13px}.control output{font-variant-numeric:tabular-nums;color:var(--cyan)}input[type=range]{width:100%;accent-color:var(--cyan);margin:0}select{color:var(--ink);border:1px solid #416171;background:#162c38;border-radius:7px;padding:8px;max-width:100%}button{color:#05131a;border:0;background:var(--cyan);padding:10px 15px;border-radius:9px;font-weight:800;cursor:pointer;font:inherit;font-size:13px}button.secondary{color:var(--ink);background:#294356}button:hover{filter:brightness(1.12)}.buttons{display:flex;flex-wrap:wrap;gap:9px}.edge{stroke:#3d6770;stroke-width:2;fill:none}.edge.reference{stroke:var(--gold);stroke-dasharray:6 5;opacity:.85}.node{fill:#182e3c;stroke:#466271;stroke-width:1.4}.node.packet{fill:#12404a;stroke:#5ed4dd}.stage{width:100%;height:auto;min-height:196px}.vector-row{display:grid;grid-template-columns:repeat(4,1fr);gap:9px}.vector-card{background:#0a1924;border:1px solid #2b4754;border-radius:10px;padding:10px}.vector-card small{color:var(--muted);font-size:11px}.bars{height:74px;display:flex;align-items:center;justify-content:space-around;gap:5px;border-bottom:1px solid #42606b;margin-top:8px}.bar{width:17%;max-width:20px;position:relative;height:60px}.bar:before{content:'';position:absolute;left:0;width:100%;height:1px;top:50%;background:#617885}.bar i{position:absolute;left:0;width:100%;display:block;border-radius:3px 3px 0 0;min-height:1px}.mini{font-size:10px;text-align:center;color:var(--muted);white-space:nowrap}.full{grid-column:1/-1}.timeline{width:100%;height:auto}.below{margin-top:18px}.key{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px}.legend{display:flex;flex-wrap:wrap;gap:16px;color:var(--muted);font-size:12px}.note{border-left:3px solid var(--gold);padding:10px 15px;background:rgba(239,183,98,.055);font-size:13px;color:var(--muted);margin-top:15px}.explain{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}.explain p{font-size:13px;color:var(--muted);margin:0}.readout{font-size:13px;color:var(--muted);line-height:1.5}.readout strong{color:var(--ink)}.formula{background:#07131c;border:1px solid #253944;border-radius:8px;padding:11px;overflow-x:auto;font-family:ui-monospace,Consolas,monospace;font-size:12px;white-space:pre-wrap}.footer{margin-top:26px;color:var(--muted);font-size:12px;border-top:1px solid var(--line);padding-top:16px}.pulse{fill:var(--cyan);filter:drop-shadow(0 0 6px #70dcde)}.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}.tags span{font-size:11px;border:1px solid #395564;padding:2px 7px;border-radius:15px;color:var(--muted)}
+@media(max-width:790px){.grid{grid-template-columns:1fr}.explain{grid-template-columns:1fr}.vector-row{grid-template-columns:repeat(2,1fr)}.wrap{padding:16px 14px 50px}.panel{padding:15px}header{padding-top:10px}}
+</style>
+</head>
+<body><main class="wrap">
+<header>
+ <div class="eyebrow">Antti Luode's experimental lineage · living mechanism laboratory</div>
+ <h1>Loop Holonomy<br><em>Neuron</em></h1>
+ <p>A tiny travelling event enters three changing receivers. Every encounter leaves a different mark. When the event returns, what can the origin learn from the difference?</p>
+ <span class="chip">SYNTHETIC SO(3) PACKET LAB — NOT A BIOLOGICAL NEURON</span>
+ <nav class="nav"><a href="https://github.com/anttiluode/LoopHolonomyNeuron">GitHub repository</a><a href="README.md">Experiment and receipts</a><a href="results/receipt.json">12-seed measurements</a><a href="DESIGN.md">Claims and controls</a></nav>
+</header>
+<div class="grid">
+ <section class="panel">
+  <h2>The paper-puncher loop</h2><p class="sub">Each square is a state-conditioned rotation of a three-number packet. The returning path and private dendritic reference use different transformations.</p>
+  <svg class="stage" viewBox="0 0 725 250" aria-label="Outgoing network path from origin through three operators, returning tuft, and a lower private reference path">
+   <defs><marker id="arr" markerWidth="7" markerHeight="7" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="none" stroke="#579fa9" stroke-width="1.4"/></marker><marker id="arrg" markerWidth="7" markerHeight="7" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="none" stroke="#efb762" stroke-width="1.4"/></marker></defs>
+   <path id="loopPath" d="M99 79 H159 M258 79 H306 M405 79 H453 M552 79 H620" class="edge" marker-end="url(#arr)"/>
+   <path d="M667 114 V175 H83 V114" class="edge reference" marker-end="url(#arrg)"/>
+   <rect x="9" y="44" width="90" height="70" rx="10" class="node packet"/>
+   <text x="54" y="70" fill="#e9f5f8" text-anchor="middle" font-size="14" font-weight="700">Sender</text><text x="54" y="87" fill="#88c9d0" text-anchor="middle" font-size="11">packet ψ</text>
+   <rect x="159" y="44" width="99" height="70" rx="10" class="node"/><text id="name1" x="208" y="70" fill="#e9f5f8" text-anchor="middle" font-size="13" font-weight="700">Punch A</text><text id="sub1" x="208" y="88" fill="#a2b6c2" text-anchor="middle" font-size="11">x rotation</text>
+   <rect x="306" y="44" width="99" height="70" rx="10" class="node"/><text id="name2" x="355" y="70" fill="#e9f5f8" text-anchor="middle" font-size="13" font-weight="700">Punch B</text><text id="sub2" x="355" y="88" fill="#a2b6c2" text-anchor="middle" font-size="11">y rotation</text>
+   <rect x="453" y="44" width="99" height="70" rx="10" class="node"/><text x="502" y="70" fill="#e9f5f8" text-anchor="middle" font-size="13" font-weight="700">Punch C</text><text x="502" y="88" fill="#a2b6c2" text-anchor="middle" font-size="11">z rotation</text>
+   <rect x="620" y="44" width="96" height="70" rx="10" class="node packet"/><text x="668" y="70" fill="#e9f5f8" text-anchor="middle" font-size="13" font-weight="700">Apical tuft</text><text x="668" y="88" fill="#88c9d0" text-anchor="middle" font-size="11">return ψ'</text>
+   <rect x="240" y="156" width="233" height="40" rx="8" fill="#18282f" stroke="#bb9858"/><text x="356" y="173" fill="#efb762" text-anchor="middle" font-size="12" font-weight="700">PRIVATE REFERENCE / CABLE</text><text x="356" y="188" fill="#a2b6c2" text-anchor="middle" font-size="10">own emitted state with decaying modes</text>
+   <path d="M83 175 H240" class="edge reference" marker-end="url(#arrg)"/><path d="M473 175 H667" class="edge reference" marker-end="url(#arrg)"/>
+   <text x="362" y="233" font-size="12" fill="#a2b6c2" text-anchor="middle">Network return ≠ internal prediction → potential consequence signal</text>
+   <circle id="traveller" class="pulse" cx="54" cy="79" r="0"/>
+  </svg>
+  <div class="vector-row" id="vectors"></div>
+  <div class="note">Three marks are applied sequentially: the later punch sees the changed packet, not the original one. Real neural relays regenerate spikes; these continuous packet rotations are a mathematical stand-in for state-dependent burst or transmission signatures.</div>
+ </section>
+ <section class="panel controls">
+  <h2>Operate the loop</h2>
+  <label class="control">Path order<select id="order"><option value="AB">A → B → C</option><option value="BA">B → A → C</option></select></label>
+  <label class="control">Outgoing packet<select id="packet"><option value="wide">State-bearing / 3D</option><option value="blind">Blind fixed packet</option><option value="z">Informative fixed packet</option></select></label>
+  <label class="control">Sender state angle<output id="phasev"></output></label><input id="phase" type="range" min="0" max="628" value="110">
+  <label class="control">Punch A strength<output id="av"></output></label><input id="a" type="range" min="0" max="180" value="94">
+  <label class="control">Punch B strength<output id="bv"></output></label><input id="b" type="range" min="-180" max="0" value="-103">
+  <label class="control">Resident-state write gain<output id="wv"></output></label><input id="w" type="range" min="0" max="25" value="12">
+  <div class="buttons"><button id="fire">Send a ping ↗</button><button id="clear" class="secondary">Reset learning</button><button id="reverse" class="secondary">Reverse A/B</button></div>
+  <div class="measure">
+   <div class="metric"><div class="label">Output vs private cable</div><div class="big" id="mismatch">—</div><div class="sub">Magnitude, not holonomy</div></div>
+   <div class="metric"><div class="label">Learned predictor error</div><div class="big" id="prediction">—</div><div class="sub">Forward model; lower after learning</div></div>
+   <div class="metric"><div class="label">Operator order gap</div><div class="big" id="ordergap">—</div><div class="sub">‖T<sub>AB</sub> − T<sub>BA</sub>‖<sub>F</sub></div></div>
+   <div class="metric"><div class="label">Abstract group-loop trace</div><div class="big" id="trace">—</div><div class="sub">Tr(B⁻¹ A⁻¹ B A), NOT tuft mismatch</div></div>
+  </div>
+  <p class="readout" id="interpret">Click send to compare the two routes and update a small local predictor.</p>
+  <div class="tags"><span id="counter">0 pings</span><span>4 measured temporal windows</span><span>No backprop</span></div>
+ </section>
+ <section class="panel full">
+  <h2>Listening at four different delays</h2>
+  <p class="sub">An imposed illustrative response kernel: early activity carries a direct copy of the probe; late activity carries the transformed network return. The vertical coordinate is the signed projection along the current outgoing packet.</p>
+  <svg id="echochart" class="timeline" viewBox="0 0 850 240" role="img" aria-label="Four response windows of the internal direct and external echo contributions"></svg>
+  <div class="legend"><span><i class="key" style="background:var(--gold)"></i>Early direct response</span><span><i class="key" style="background:var(--cyan)"></i>Late external return</span><span><i class="key" style="background:var(--pink)"></i>Total tuft observation</span></div>
+ </section>
+</div>
+<div class="explain">
+ <section class="panel"><h3>01. Ordered composition</h3><p>The ABC and BAC routes contain the same three operators. Because A and B rotate different axes, their order matters. If they were rotations of the same axis, order would not matter.</p></section>
+ <section class="panel"><h3>02. Matched reference</h3><p>A single late return from an isotropic probe may be statistically identical under either route. Knowing the outgoing state lets the receiver measure the transformation. The early echo can sometimes supply that reference by itself.</p></section>
+ <section class="panel"><h3>03. Local learning</h3><p>After each ping, a bounded outer-product rule updates a three-by-three forward predictor. Learning to predict return does not prove inverse modeling, useful downstream behavior, or a neuron implementing gauge theory.</p></section>
+</div>
+<section class="panel below">
+ <h2>Three things called “holonomy” must not be confused</h2>
+ <div class="formula">Round-trip packet:       ψreturn = C · B · A · ψout          (one configured route)
+Order effect:            Δorder = (C·B·A − C·A·B) · ψout   (two route alternatives)
+Internal prediction:     εtuft = ψreturn − M · ψreference   (ordinary prediction error)
+Abstract closed loop:    H = B⁻¹ · A⁻¹ · B · A              (group commutator)</div>
+ <p class="sub">Only the last object is a literal closed four-leg operator loop in this synthetic group setting. Its trace is invariant under a common change of coordinate basis. A Wilson loop in gauge theory additionally requires a specified connection and its parallel transport; cortical anatomy does not establish such a connection. The first three objects are standard dynamical-systems / system-identification quantities.</p>
+</section>
+<div class="footer">LoopHolonomyNeuron v0 · NumPy experiment and browser visualization. No fitted cortical connectivity, axonal waveform transmission, demonstrated biological credit assignment, or evidence of emergent neuronal holonomy. Read the frozen controls before giving the diagram any larger meaning.</div>
+</main>
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+const axis=(n,a)=>{let c=Math.cos(a),s=Math.sin(a);return n===0?[[1,0,0],[0,c,-s],[0,s,c]]:n===1?[[c,0,s],[0,1,0],[-s,0,c]]:[[c,-s,0],[s,c,0],[0,0,1]]};
+const mv=(m,v)=>m.map(row=>row.reduce((s,a,i)=>s+a*v[i],0));
+const mm=(a,b)=>a.map(row=>[0,1,2].map(j=>row.reduce((s,v,i)=>s+v*b[i][j],0)));
+const tr=m=>m[0][0]+m[1][1]+m[2][2];
+const trans=m=>[0,1,2].map(i=>[0,1,2].map(j=>m[j][i]));
+const sub=(a,b)=>a.map((v,i)=>v-b[i]);
+const norm=v=>Math.hypot(...v);
+const fnorm=m=>Math.sqrt(m.flat().reduce((s,v)=>s+v*v,0));
+const dn=(a,b)=>fnorm(a.map((row,i)=>sub(row,b[i])));
+const dot=(a,b)=>a.reduce((s,v,i)=>s+v*b[i],0);
+const mul=(v,k)=>v.map(x=>x*k);
+const cross=(a,b)=>[a[1]*b[2]-a[2]*b[1],a[2]*b[0]-a[0]*b[2],a[0]*b[1]-a[1]*b[0]];
+const normalize=v=>mul(v,1/(norm(v)||1));
+const I=()=>[[1,0,0],[0,1,0],[0,0,1]];
+let model=I(),states={A:0,B:0,C:0},count=0,animation=null,hadPing=false;
+function current(){const a=+$('#a').value/100,b=+$('#b').value/100,p=+$('#phase').value/100,w=+$('#w').value/100,order=$('order').value;return {a,b,p,w,order}}
+function matrices(c){return {A:axis(0,c.a+.22*states.A),B:axis(1,c.b+.22*states.B),C:axis(2,.24+.22*states.C)}}
+function packet(c,m){let v=[Math.cos(c.p)*.85,Math.sin(c.p)*.85,.45];v=normalize(v);if($('packet').value==='z')return [0,0,1];if($('packet').value==='blind'){let d=mm(m.C,mm(m.B,m.A)),e=mm(m.C,mm(m.A,m.B));let z=d.map((row,i)=>sub(row,e[i]));let u=cross(z[0],z[1]);if(norm(u)<1e-10)u=cross(z[0],z[2]);return normalize(u)}return v}
+function reference(v){let d=[Math.exp(-24/25),Math.exp(-24/75),Math.exp(-24/180)];return mv(axis(2,.13),v.map((x,i)=>x*d[i]))}
+function simulate(update=false){let c=current(),m=matrices(c),p=packet(c,m),r=reference(p);let path=c.order==='AB'?['A','B','C']:['B','A','C'];let intermediates=[p],v=p;for(let n of path){let before=v;v=mv(m[n],v);intermediates.push(v);if(update)states[n]=.91*states[n]+c.w*.12*Math.tanh(before[n==='A'?0:n==='B'?1:2])}
+ let prior=mv(model,r),err=norm(sub(v,prior));if(update){let residue=sub(v,prior),rate=.18/(.12+dot(r,r));model=model.map((row,i)=>row.map((val,j)=>val+rate*residue[i]*r[j]));count++;hadPing=true}
+ let ab=mm(m.C,mm(m.B,m.A)),ba=mm(m.C,mm(m.A,m.B));let h=mm(trans(m.B),mm(trans(m.A),mm(m.B,m.A)));
+ return {c,m,p,r,v,prior,err,intermediates,path,delta:norm(sub(v,r)),ordergap:dn(ab,ba),trace:tr(h)}
+}
+function bars(v){let cols=['#70dcde','#efb762','#df93b6'];return '<div class="bars">'+v.map((x,i)=>{let h=Math.min(28,Math.abs(x)*28);return '<div class="bar"><i style="background:'+cols[i]+';height:'+Math.max(1,h)+'px;top:'+(x>=0?30-h:30)+'px;border-radius:'+(x>=0?'3px 3px 0 0':'0 0 3px 3px')+'"></i></div>'}).join('')+'</div><div class="mini">'+v.map(x=>(x>=0?'+':'')+x.toFixed(2)).join(' · ')+'</div>'}
+function drawTiming(o){let c=o.p;let direct=mv(axis(2,.23),o.p);let coeffD=[1,.65,.17,.025],coeffR=[0,.16,.78,.98],xs=[120,325,530,735];let sequences=[coeffD.map(x=>x*dot(direct,c)),coeffR.map(x=>x*dot(o.v,c))];sequences.push(sequences[0].map((x,i)=>x+sequences[1][i]));let sy=v=>143-v*70,colors=['#efb762','#70dcde','#df93b6'];let svg=`<line x1="60" y1="143" x2="814" y2="143" stroke="#526977" stroke-width="1"/><text x="22" y="147" fill="#a2b6c2" font-size="11">0</text>`;for(let i=0;i<4;i++){svg+=`<line x1="${xs[i]}" y1="22" x2="${xs[i]}" y2="188" stroke="#284250" stroke-dasharray="3 5"/><text x="${xs[i]}" y="212" fill="#a2b6c2" font-size="13" text-anchor="middle">${[4,12,24,45][i]} ms</text>`}sequences.forEach((seq,n)=>{svg+=`<polyline points="${seq.map((v,i)=>xs[i]+','+sy(v)).join(' ')}" fill="none" stroke="${colors[n]}" stroke-width="${n===2?3:2}" ${n===0?'stroke-dasharray="5 5"':''}/>`;seq.forEach((v,i)=>{svg+=`<circle cx="${xs[i]}" cy="${sy(v)}" r="${n===2?5:3}" fill="${colors[n]}"/>`})});svg+=`<text x="810" y="23" fill="#a2b6c2" font-size="11" text-anchor="end">signed projection on outgoing packet</text>`;$('echochart').innerHTML=svg}
+function paint(){let o=simulate(false);for(let k of ['phase','a','b','w'])$(k+'v').textContent= k==='phase' ? (o.c.p).toFixed(2)+' rad':(k==='a'?o.c.a:k==='b'?o.c.b:o.c.w).toFixed(2);$('name1').textContent='Punch '+o.path[0];$('name2').textContent='Punch '+o.path[1];$('sub1').textContent=o.path[0]==='A'?'x rotation':'y rotation';$('sub2').textContent=o.path[1]==='A'?'x rotation':'y rotation';$('vectors').innerHTML=o.intermediates.map((v,i)=>`<div class="vector-card"><small>${i===0?'Original packet':i===3?'Return packet':'After '+o.path[i-1]}</small>${bars(v)}</div>`).join('');for(let [name,v] of [['mismatch',o.delta],['prediction',o.err],['ordergap',o.ordergap],['trace',o.trace]])$(name).textContent=v.toFixed(3);$('counter').textContent=count+' pings';$('interpret').innerHTML=(hadPing?'<strong>Learning:</strong> the 3×3 forward predictor is updated by an ordinary normalized outer-product rule after each ping. ':'<strong>Two parallel comparisons:</strong> network return vs decayed private cable; and network return vs a trainable forward prediction. ')+(o.c.w===0?'Node states are frozen.':'Each ping slightly changes node states for the next ping.');drawTiming(o)}
+function travel(){let dot=$('traveller');if(animation)cancelAnimationFrame(animation);const pts=[[54,79],[208,79],[355,79],[502,79],[668,79]],start=performance.now();function tick(t){let f=Math.min((t-start)/1150,1),j=Math.min(3,Math.floor(f*4)),alpha=f===1?1:f*4-j;dot.setAttribute('r',f===1?'0':'7');dot.setAttribute('cx',pts[j][0]+(pts[j+1][0]-pts[j][0])*alpha);dot.setAttribute('cy',79);if(f<1)animation=requestAnimationFrame(tick)}animation=requestAnimationFrame(tick)}
+['phase','a','b','w','order','packet'].forEach(id=>$(id).addEventListener('input',paint));$('fire').addEventListener('click',()=>{simulate(true);travel();paint()});$('reverse').addEventListener('click',()=>{$('order').value=$('order').value==='AB'?'BA':'AB';paint();travel()});$('clear').addEventListener('click',()=>{model=I();states={A:0,B:0,C:0};count=0;hadPing=false;paint()});paint();
+</script></body></html>
